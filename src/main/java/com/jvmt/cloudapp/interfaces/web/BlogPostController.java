@@ -39,13 +39,13 @@ public class BlogPostController {
 		LOG.debug("Content {}", content);
 		store.saveBlogEntry(new BlogEntry(title, content));
 		String message = "Your Post was saved!";
-		redirectAttributes.addFlashAttribute("message", message);
-		redirectAttributes.addFlashAttribute("result", store.listAll());
-		return "redirect:/dashboard";
+		//redirectAttributes.addFlashAttribute("message", message);
+		//redirectAttributes.addFlashAttribute("result", store.listAll());
+		return "result";
 	}
 
-	@RequestMapping("/dashboard")
+	@RequestMapping("/result")
 	public String dashboard() {
-		return "dashboard";
+		return "result";
 	}
 }
